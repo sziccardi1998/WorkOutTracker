@@ -17,10 +17,12 @@ require("./routes/htmlRoutes.js")(app);
 require("./routes/apiRoutes.js")(app);
 // conncect to database with mongoose
 mongoose.connect(
-    process.env.MONGODB_URI, {
+    process.env.MONGODB_URI || 'monodb://localhost/Workout', {
         useNewUrlParser: true,
-        useFindAndModify: false,
-        useUnifiedTopology: true 
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    
        }
 )
 
