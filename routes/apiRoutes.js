@@ -10,7 +10,7 @@ module.exports = function(app) {
         });
     });
 
-    app.put("/api/workouts/:id" function({body, params}, res) {
+    app.put("/api/workouts/:id", function({body, params}, res) {
         db.Workout.findByIdAndUpdate(
             params.id,
             { $push: { exercises: body } },
