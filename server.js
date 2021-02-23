@@ -15,10 +15,11 @@ require("./routes/htmlRoutes.js")(app);
 
 // conncect to database with mongoose
 mongoose.connect(
-    process.env.MONGODB_URI, {
+    process.env.MONGODB_URI || 'mongodb://localhost/myFirstDatabase', {
         useNewUrlParser: true,
         useFindAndModify: false,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex: true
     }
 )
 
