@@ -22,7 +22,7 @@ module.exports = function(app) {
         });
     });
 
-    app.post("/api/workouts", (req, res) => {
+    app.post("/api/workouts", function (req, res) {
         db.Workout.create({}).then(result => {
             res.json(result);
         }).catch(err => {
