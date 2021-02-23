@@ -15,5 +15,15 @@
     "express": "^4.16.3",
     "mongoose": "^5.11.17",
     "morgan": "^1.9.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sziccardi1998/WorkOutTracker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/sziccardi1998/WorkOutTracker/issues"
+  },
+  "homepage": "https://github.com/sziccardi1998/WorkOutTracker#readme"
 }
