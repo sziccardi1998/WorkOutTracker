@@ -12,7 +12,7 @@ app.use(morgan("combined"));
 
 require("./routes/htmlRoutes.js")(app);
 // require api route after addition
-
+require("./routes/apiRoutes.js")(app);
 // conncect to database with mongoose
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost/myFirstDatabase', {
