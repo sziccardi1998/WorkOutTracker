@@ -1,3 +1,4 @@
+const router = require("express").Router();
 const path = require("path");
 
 module.exports = function(app) {
@@ -13,3 +14,6 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public/stats.html"));
     });
 }
+
+
+module.exports = router;
