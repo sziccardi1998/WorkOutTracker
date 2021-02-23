@@ -2,10 +2,10 @@ var db = require("../models");
 
 module.exports = function(app) {
     app.get("/api/workouts", function(req, res) {
-        db.Workout.find({}).then(result => {
+        db.Workout.find({}).then((result) => {
             res.json(result);
         })
-        .catch(err => {
+        .catch((err) => {
             res.json(err);
         });
     });
@@ -15,25 +15,25 @@ module.exports = function(app) {
             params.id,
             { $push: { exercises: body } },
             { new: true }
-        ).then(result => {
+        ).then((result) => {
             res.json(result);
-        }).catch(err => {
+        }).catch((err) => {
             res.json(err);
         });
     });
 
-    app.post("/api/workouts", function (req, res) {
-        db.Workout.create({}).then(result => {
+    app.post("/api/workouts", ({ body }, res) => {
+        db.Workout.create(body).then((result) => {
             res.json(result);
-        }).catch(err => {
+        }).catch((err) => {
             res.json(err);
         });
     });
 
     app.get("/api/workouts/range", function(req, res) {
-        db.Workout.find({}).limit(5).then(result => {
+        db.Workout.find({}).limit(5).then((result) => {
             res.json(result);
-        }).catch(err => {
+        }).catch((err) => {
             res.json(err);
         });
     });
